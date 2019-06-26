@@ -1,0 +1,24 @@
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
+
+<h1>Skills</h1>
+
+<p *ngIf="!skills"><em>Loading...</em></p>
+
+<table class='table table-light table-hover table-striped' *ngIf="skills">
+  <thead class="thead-dark">
+    <tr>
+      <th>Programming Language</th>
+      <th>Proficency</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let skill of skills">
+      <td>{{ skill.languageName }}</td>
+      <td>
+        <div class="progress">
+          <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuemin="0" aria-valuemax="100" [attr.aria-valuenow]="skill.programmingLanguageLevel * 10" [style.width.%]="skill.programmingLanguageLevel * 10" ></div>
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>

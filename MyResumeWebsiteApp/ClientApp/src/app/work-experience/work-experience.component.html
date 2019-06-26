@@ -1,0 +1,26 @@
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
+
+<h1>Work Experience</h1>
+
+<p *ngIf="!workExperiences"><em>Loading...</em></p>
+
+<table class='table table-light table-hover table-striped' *ngIf="workExperiences">
+  <thead class="thead-dark">
+    <tr>
+      <th>Company Name</th>
+      <th>Position</th>
+      <th>Start Date</th>
+      <th>End Date</th>
+      <th>Duties</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let work of workExperiences">
+      <td>{{ work.companyName }}</td>
+      <td>{{ work.position }}</td>
+      <td>{{ work.startDate }}</td>
+      <td>{{ work.endDate }}</td>
+      <td>{{ work.duties }}</td>
+    </tr>
+  </tbody>
+</table>
